@@ -10,9 +10,10 @@ import { ErrorComponent } from './error/error.component';
 import { ListToDosComponent } from './list-to-dos/list-to-dos.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, ListToDosComponent, MenuComponent, FooterComponent],
+  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, ListToDosComponent, MenuComponent, FooterComponent, LogoutComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

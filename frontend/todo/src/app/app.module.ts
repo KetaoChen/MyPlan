@@ -8,9 +8,11 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { LoginComponent } from "./login/login.component";
 import { ErrorComponent } from './error/error.component';
 import { ListToDosComponent } from './list-to-dos/list-to-dos.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, ListToDosComponent],
+  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, ListToDosComponent, MenuComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

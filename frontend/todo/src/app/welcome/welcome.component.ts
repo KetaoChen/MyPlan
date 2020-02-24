@@ -8,8 +8,6 @@ import { WelcomeDataService } from "../service/data/welcome-data.service";
   styleUrls: ["./welcome.component.css"]
 })
 export class WelcomeComponent implements OnInit {
-  welcomeMessage = "Welcome to Charlesna TODO Website!";
-
   //ActivateRoute
   constructor(
     private route: ActivatedRoute,
@@ -18,23 +16,30 @@ export class WelcomeComponent implements OnInit {
 
   name = this.route.snapshot.params["name"];
   welcomeMessageFromService: string;
+  welcomeMessage = "Welcome to Charlesna TODO Website!";
 
   ngOnInit() {
-    console.log("welcome works");
-    console.log(this.name);
+    //console.log("welcome works");
+    //console.log(this.name);
   }
 
   getWelcomeMessage() {
-    console.log(this.service.executeHelloWorldBeanService());
-    this.service
-      .executeHelloWorldBeanService()
-      .subscribe(response => this.handleSuccessfulResponse(response));
+    //console.log(this.service.executeHelloWorldBeanService());
+    this.service.executeHelloWorldBeanService().subscribe(
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
 
-    console.log("Last line of get welcome message");
+    //console.log("Last line of get welcome message");
   }
 
   handleSuccessfulResponse(response) {
     this.welcomeMessageFromService = response.message;
-    console.log(response.message);
+    //console.log(response.message);
+  }
+
+  handleErrorResponse(error) {
+    console.log(error.error.message);
+    this.welcomeMessageFromService = error.error.message;
   }
 }

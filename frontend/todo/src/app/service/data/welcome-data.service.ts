@@ -8,6 +8,6 @@ export class WelcomeDataService {
   constructor(private http: HttpClient) {}
 
   executeHelloWorldBeanService() {
-    console.log(this.http.get("http://localhost:8080/hello-world"));
+    return this.http.get("http://localhost:8080/hello-world-bean");
   }
 }

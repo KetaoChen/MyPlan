@@ -1,4 +1,4 @@
-package com.charlesna.rest.webservices.todorestfulwebservices;
+package com.charlesna.rest.webservices.todorestfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

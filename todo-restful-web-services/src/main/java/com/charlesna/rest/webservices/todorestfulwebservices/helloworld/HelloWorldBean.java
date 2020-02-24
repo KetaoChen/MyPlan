@@ -1,4 +1,4 @@
-package com.charlesna.rest.webservices.todorestfulwebservices;
+package com.charlesna.rest.webservices.todorestfulwebservices.helloworld;
 
 public class HelloWorldBean {
 

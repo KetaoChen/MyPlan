@@ -5,6 +5,7 @@
     <label>Description</label>
     <input
       type="text"
+      [(ngModel)]="todo.description"
       class="form-control"
       name="description"
       required="required"
@@ -15,6 +16,7 @@
     <label>Target Date</label>
     <input
       type="date"
+      [(ngModel)]="todo.targetDate"
       class="form-control"
       name="targetDate"
       required="required"

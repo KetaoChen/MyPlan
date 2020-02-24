@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class TodoComponent implements OnInit {
   id: number;
   todo: Todo;
-
+  message = "Please fill this form!";
   constructor(
     private todoService: TodoDataService,
     private route: ActivatedRoute,

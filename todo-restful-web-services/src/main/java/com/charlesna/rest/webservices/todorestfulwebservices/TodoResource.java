@@ -4,9 +4,11 @@ package com.charlesna.rest.webservices.todorestfulwebservices;
 import com.charlesna.rest.webservices.todorestfulwebservices.todo.Todo;
 import com.charlesna.rest.webservices.todorestfulwebservices.todo.TodoHardcodedService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -34,5 +36,12 @@ public class TodoResource {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PutMapping("/users/{username}/todos/{id}")
+    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo) {
+        Todo todoUpdated = todoservice.save(todo);
+        return new ResponseEntity<Todo>(todo, HttpStatus.OK);
+    }
+
 
 }

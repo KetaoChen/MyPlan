@@ -2,9 +2,13 @@
 
 <div class="container">Hi {{ name }}! {{ welcomeMessage }}</div>
 
+<br />
+
 <div class="container">
   You can mange your TODOs <a routerLink="/todos">here</a>
 </div>
+
+<br />
 
 <div class="container">
   Click here to get a customized welcome message.
@@ -13,7 +17,10 @@
   </button>
 </div>
 
+<br /><br />
+
 <div class="container" *ngIf="welcomeMessageFromService">
-  <H2>Your Customized Welcome Message</H2>
+  <H2>Surprise:</H2>
+  <br />
   {{ welcomeMessageFromService }}
 </div>

@@ -17,6 +17,7 @@ export class WelcomeComponent implements OnInit {
   ) {}
 
   name = this.route.snapshot.params["name"];
+  welcomeMessageFromService: string;
 
   ngOnInit() {
     console.log("welcome works");
@@ -25,6 +26,15 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessage() {
     console.log(this.service.executeHelloWorldBeanService());
-    this.service.executeHelloWorldBeanService().subscribe();
+    this.service
+      .executeHelloWorldBeanService()
+      .subscribe(response => this.handleSuccessfulResponse(response));
+
+    console.log("Last line of get welcome message");
+  }
+
+  handleSuccessfulResponse(response) {
+    this.welcomeMessageFromService = response.message;
+    console.log(response.message);
   }
 }

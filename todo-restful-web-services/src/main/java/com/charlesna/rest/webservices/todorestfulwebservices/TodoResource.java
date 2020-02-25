@@ -1,6 +1,5 @@
 package com.charlesna.rest.webservices.todorestfulwebservices;
 
-
 import com.charlesna.rest.webservices.todorestfulwebservices.todo.Todo;
 import com.charlesna.rest.webservices.todorestfulwebservices.todo.TodoHardcodedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +39,8 @@ public class TodoResource {
     }
 
     @PutMapping("/users/{username}/todos/{id}")
-    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo) {
+    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id,
+            @RequestBody Todo todo) {
         Todo todoUpdated = todoservice.save(todo);
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
@@ -48,7 +48,8 @@ public class TodoResource {
     @PostMapping("/users/{username}/todos")
     public ResponseEntity<Todo> updateTodo(@PathVariable String username, @RequestBody Todo todo) {
         Todo createTodo = todoservice.save(todo);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createTodo.getId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createTodo.getId())
+                .toUri();
         return ResponseEntity.created(uri).build();
     }
 }

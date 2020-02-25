@@ -13,7 +13,6 @@ public class TodoHardcodedService {
     private static List<Todo> todos = new ArrayList();
     private static int idCounter = 1;
 
-
     static {
         todos.add(new Todo(idCounter++, "cha", "Poppin", new Date(), false));
         todos.add(new Todo(idCounter++, "cha", "Coding", new Date(), false));
@@ -48,13 +47,11 @@ public class TodoHardcodedService {
         if (todo.getId() == -1 || todo.getId() == 0) {
             todo.setId(idCounter++);
             todos.add(todo);
-        }
-        else {
+        } else {
             deleteById(todo.getId());
             todos.add(todo);
         }
         return todo;
     }
-
 
 }

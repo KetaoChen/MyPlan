@@ -8,16 +8,6 @@ import { map } from "rxjs/operators";
 export class BasicAuthenticationService {
   constructor(private http: HttpClient) {}
 
-  authenticate(username, password) {
-    //console.log("before " + this.isUserLoggedIn());
-    if (username === "Charlesna" && password === "31415926") {
-      sessionStorage.setItem("authenticatedUser", username);
-      //console.log("after " + this.isUserLoggedIn());
-      return true;
-    }
-    return false;
-  }
-
   executeAuthenticationService(username, password) {
     let basicAuthHeaderString =
       "Basic " + window.btoa(username + ":" + password);
@@ -31,9 +21,20 @@ export class BasicAuthenticationService {
       .pipe(
         map(data => {
           sessionStorage.setItem("authenticatedUser", username);
+          sessionStorage.setItem("token", basicAuthHeaderString);
           return data;
         })
       );
+  }
+
+  getAuthenticatedUser() {
+    return sessionStorage.getItem("authenticatedrUser");
+  }
+
+  getAuthenticatedToken() {
+    if (this.getAuthenticatedUser) {
+      return sessionStorage.getItem("token");
+    }
   }
 
   isUserLoggedIn() {

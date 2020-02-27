@@ -23,15 +23,15 @@ export class WelcomeComponent implements OnInit {
     //console.log(this.name);
   }
 
-  getWelcomeMessage() {
-    //console.log(this.service.executeHelloWorldBeanService());
-    this.service.executeHelloWorldBeanService().subscribe(
-      response => this.handleSuccessfulResponse(response),
-      error => this.handleErrorResponse(error)
-    );
+  // getWelcomeMessage() {
+  //   //console.log(this.service.executeHelloWorldBeanService());
+  //   this.service.executeHelloWorldBeanService().subscribe(
+  //     response => this.handleSuccessfulResponse(response),
+  //     error => this.handleErrorResponse(error)
+  //   );
 
-    //console.log("Last line of get welcome message");
-  }
+  //   //console.log("Last line of get welcome message");
+  // }
 
   getWelcomeMessageWithParameter() {
     this.service.executeHelloWorldServiceWithVariable(this.name).subscribe(

@@ -28,7 +28,7 @@ export class BasicAuthenticationService {
   }
 
   getAuthenticatedUser() {
-    return sessionStorage.getItem("authenticatedrUser");
+    return sessionStorage.getItem("authenticatedUser");
   }
 
   getAuthenticatedToken() {

@@ -9,7 +9,7 @@ import { BasicAuthenticationService } from "../service/basic-authentication.serv
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  username = "Charlesna";
+  username = "user";
   password;
   errorMessage = "Invalid Credentials";
   invalidLogin = false;

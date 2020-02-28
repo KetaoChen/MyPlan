@@ -9,7 +9,7 @@ import { BasicAuthenticationService } from "../service/basic-authentication.serv
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  username = "user";
+  username = "charlesna";
   password;
   errorMessage = "Invalid Credentials";
   invalidLogin = false;
@@ -39,6 +39,22 @@ export class LoginComponent implements OnInit {
   handleBasicAuthLogin() {
     this.basicAuthenticationService
       .executeAuthenticationService(this.username, this.password)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(["welcome", this.username]);
+          this.invalidLogin = false;
+        },
+        error => {
+          console.log(error);
+          this.invalidLogin = true;
+        }
+      );
+  }
+
+  handleJWTAuthLogin() {
+    this.basicAuthenticationService
+      .executeJWTAuthenticationService(this.username, this.password)
       .subscribe(
         data => {
           console.log(data);

@@ -1,4 +1,4 @@
-package com.charlesna.rest.webservices.todorestfulwebservices;
+package com.charlesna.rest.webservices.todorestfulwebservices.todo;
 
 import com.charlesna.rest.webservices.todorestfulwebservices.todo.Todo;
 import com.charlesna.rest.webservices.todorestfulwebservices.todo.TodoHardcodedService;

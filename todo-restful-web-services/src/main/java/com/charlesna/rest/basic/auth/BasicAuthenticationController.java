@@ -1,9 +1,8 @@
-package com.charlesna.rest.webservices.todorestfulwebservices.basic.auth;
+package com.charlesna.rest.basic.auth;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 //Controller

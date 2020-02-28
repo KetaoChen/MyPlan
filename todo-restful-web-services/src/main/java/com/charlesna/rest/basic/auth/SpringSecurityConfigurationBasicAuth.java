@@ -1,4 +1,4 @@
-package com.charlesna.rest.webservices.todorestfulwebservices.basic.auth;
+package com.charlesna.rest.basic.auth;
 
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Configuration;

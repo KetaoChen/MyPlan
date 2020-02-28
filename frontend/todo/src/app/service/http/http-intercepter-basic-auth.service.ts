@@ -4,7 +4,7 @@ import {
   HttpRequest,
   HttpHandler
 } from "@angular/common/http";
-import { request } from "http";
+
 import { BasicAuthenticationService } from "../basic-authentication.service";
 
 @Injectable({

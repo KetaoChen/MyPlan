@@ -1,4 +1,4 @@
-package com.charlesna.rest.webservices.todorestfulwebservices.basic.auth;
+package com.charlesna.rest.basic.auth;
 
 public class AuthenticationdBean {
 
